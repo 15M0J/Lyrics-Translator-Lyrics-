@@ -33,7 +33,7 @@ const parseLRC = (text: string): LyricLine[] => {
 
   // ✅ Load lyrics on mount (update filename if needed)
   useEffect(() => {
-    fetch("/lyrics.lrc")
+    fetch("/audio/lyrics.lrc")
       .then((res) => res.text())
       .then((text) => setLyrics(parseLRC(text)))
       .catch((err) => console.error("Error loading LRC:", err));
@@ -68,7 +68,7 @@ const parseLRC = (text: string): LyricLine[] => {
         ref={audioRef}
         controls
         className="w-full max-w-md mb-8"
-        src="/audio.mp3" // ✅ ensure your audio file is in /public/audio.mp3
+        src="/audio/shaky.mp3" // ✅ ensure your audio file is in /public/audio.mp3
       />
 
       {/* Lyrics Section */}
